@@ -58,7 +58,7 @@ class _LoginPState extends State<LoginP> {
           const SizedBox(height: AppSizes.sizeInput),
           CustomButton(
             onpress: () {
-              Navigator.pushNamed(context, '/Create');
+              Navigator.pushReplacementNamed(context, '/home');
             },
             textB: 'Login',
           ),

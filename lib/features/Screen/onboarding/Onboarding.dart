@@ -1,8 +1,9 @@
 // ignore_for_file: non_constant_identifier_names, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:medi_dos_app/features/Screen/onboarding/OnboardingItem.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../onboarding.dart/onboardingItem.dart';
+
 
 class OnboardingP extends StatefulWidget {
   const OnboardingP({super.key});

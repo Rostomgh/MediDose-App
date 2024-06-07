@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/Logo/
     - assets/Oboarding/
+    - assets/Category/
 
 
 
