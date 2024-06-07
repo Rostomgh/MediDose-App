@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medi_dos_app/core/Router/ErrorRoute.dart';
 import 'package:medi_dos_app/features/Auth/Login.dart';
 import 'package:medi_dos_app/features/Auth/Signin.dart';
+import 'package:medi_dos_app/features/Screen/Forget%20Password/Conformation.dart';
+import 'package:medi_dos_app/features/Screen/Forget%20Password/ForgetPassword.dart';
+import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart';
 import 'package:medi_dos_app/features/Screen/Logo.dart';
 
 class AppRoute {
@@ -13,6 +16,12 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) =>const LoginP());
         case '/Create':
         return MaterialPageRoute(builder: (_) =>const SignIn());
+        case 'ForgotPassword':
+        return MaterialPageRoute(builder: (_)=>const ForgotPasswordP());
+        case 'ConformationPassword':
+        return MaterialPageRoute(builder: (_)=>const ConformationPasswordP());
+        case 'newPassword':
+        return MaterialPageRoute(builder: (_)=>const NewPasswordP());
       default:
         return MaterialPageRoute(builder: (_) =>const ErrorRoute());
     }
