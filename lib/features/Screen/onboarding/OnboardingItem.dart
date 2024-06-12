@@ -1,4 +1,6 @@
-import '../Screen/onboarding.dart/OboardingModel.dart';
+import 'package:medi_dos_app/features/Screen/onboarding/OboardingModel.dart';
+
+
 
 class OboardingItem {
   List<Onboardingmodel> Item = [
