@@ -6,7 +6,7 @@ class CustomCategory extends StatelessWidget {
   final String title;
   final String imageN;
 
-  const CustomCategory({super.key, required this.title, required this.imageN});
+  const CustomCategory({super.key, required this.title, required this.imageN, void Function()? navigate});
 
   @override
   Widget build(BuildContext context) {

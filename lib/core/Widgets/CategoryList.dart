@@ -19,7 +19,11 @@ class CategoryScreen extends StatelessWidget {
       itemCount: categoryItems.length,
       itemBuilder: (context, index) {
         final item = categoryItems[index];
-        return CustomCategory(title: item.title, imageN: item.image);
+        return CustomCategory(
+          title: item.title,
+          imageN: item.image,
+          navigate: item.navigate,
+        );
       },
     );
   }

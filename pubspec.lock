@@ -163,6 +163,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
+  responsive_grid:
+    dependency: "direct main"
+    description:
+      name: responsive_grid
+      sha256: "852b4d46ae4a530e0d54a1dc59964f3d2cd8d6ca1f6fc4e5790cc0580e367e24"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -242,3 +250,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.3.1 <4.0.0"
+  flutter: ">=1.17.0"
