@@ -28,7 +28,7 @@ class _CustomGridState extends State<CustomGrid> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(15.0),
       child: ResponsiveGridRow(
         children: [
           ResponsiveGridCol(

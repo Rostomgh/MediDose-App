@@ -9,22 +9,25 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final categoryItems = CategoryItem().items;
 
-    return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
+    return Container(
+      height: 125, // Adjust the height as needed
+      child: GridView.builder(
+        padding: const EdgeInsets.all(8.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0,
+        ),
+        itemCount: categoryItems.length,
+        itemBuilder: (context, index) {
+          final item = categoryItems[index];
+          return CustomCategory(
+            title: item.title,
+            imageN: item.image,
+            navigate: item.navigate,
+          );
+        },
       ),
-      itemCount: categoryItems.length,
-      itemBuilder: (context, index) {
-        final item = categoryItems[index];
-        return CustomCategory(
-          title: item.title,
-          imageN: item.image,
-          navigate: item.navigate,
-        );
-      },
     );
   }
 }

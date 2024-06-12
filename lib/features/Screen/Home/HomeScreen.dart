@@ -25,13 +25,13 @@ class _HomePState extends State<HomeP> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CategoryScreen(),
-            const SizedBox(height: 20),
-            const Padding(
+            CategoryScreen(),
+            SizedBox(height: 20),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 'Available now',
@@ -42,9 +42,9 @@ class _HomePState extends State<HomeP> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 17),
             CustomGrid(
-              image: 'assets/Category/Cat1.jpg',
+              image: 'assets/Clinc/Clinc.jpg',
               Name: 'Clinic Name 1',
               adress: '123 Main St',
               time: '9:00 AM - 5:00 PM',
