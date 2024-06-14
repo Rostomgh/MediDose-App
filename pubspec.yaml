@@ -39,6 +39,9 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   eva_icons_flutter: ^3.1.0
   responsive_grid: ^2.4.4
+  curved_navigation_bar: ^1.0.3
+  bloc: ^8.1.4
+  
   
 
 dev_dependencies:

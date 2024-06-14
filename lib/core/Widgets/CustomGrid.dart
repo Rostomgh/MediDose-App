@@ -46,7 +46,10 @@ class _CustomGridState extends State<CustomGrid> {
             
               child: Row(
                 children: [
-                  Image.asset(widget.image, height: 128, width: 118),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(widget.image, height: 128, width: 118),
+                  ),
                   const SizedBox(width: AppSizes.sizeRow),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

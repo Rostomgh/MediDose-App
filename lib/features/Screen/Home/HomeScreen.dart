@@ -51,14 +51,14 @@ class _HomePState extends State<HomeP> {
               number: '123-456-7890',
             ),
             CustomGrid(
-              image: 'assets/Category/Cat2.jpg',
+              image: 'assets/Clinc/Clinc.jpg',
               Name: 'Pharmacy Name 1',
               adress: '456 Elm St',
               time: '8:00 AM - 8:00 PM',
               number: '987-654-3210',
             ),
             CustomGrid(
-              image: 'assets/Category/Cat3.jpg',
+              image: 'assets/Clinc/Clinc.jpg',
               Name: 'Veterinary Name 1',
               adress: '789 Oak St',
               time: '10:00 AM - 6:00 PM',
