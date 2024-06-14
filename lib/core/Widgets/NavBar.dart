@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 class CustomNavBar extends StatefulWidget {
   const CustomNavBar({Key? key}) : super(key: key);
 
@@ -41,7 +41,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
             height: 50,
             index: selectedIndex,
             onTap: (index) {
-              BlocProvider.of<NavBarBloc>(context).add(TabChange(tabindex: index));
+              BlocProvider.of<NavBarBloc>(context).add(Changeindex(tabindex: index));
             },
             backgroundColor: Colors.blue,
             buttonBackgroundColor: Colors.white,

@@ -4,9 +4,10 @@ part of 'nav_bar_bloc.dart';
 abstract class NavBarState {
   final int tabindex;
 
-  NavBarState(int index, {required this.tabindex});
+  NavBarState( {required this.tabindex});
 }
 
 final class NavBarInitial extends NavBarState {
-  NavBarInitial({required super.tabindex});
+  NavBarInitial( {required super.tabindex});
+
 }
