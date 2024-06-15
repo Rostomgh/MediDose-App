@@ -1,61 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
-import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-class CustomNavBar extends StatefulWidget {
-  const CustomNavBar({Key? key}) : super(key: key);
+import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
+import 'package:medi_dos_app/core/Theme/AppColor.dart';
+import 'package:medi_dos_app/core/Widgets/ListNavBar.dart';
+import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 
-  @override
-  _CustomNavBarState createState() => _CustomNavBarState();
-}
+List<BottomNavigationBarItem> navItems = [
+  const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Raport'),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Community'),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Profile'),
+];
 
-class _CustomNavBarState extends State<CustomNavBar> {
-  int selectedIndex = 0; // Initial index for selected screen
+List<Widget> bottomNavScreens = [
+  const HomeP(),
+  const Text('Screen 1'),
+  const Text('Screen 2'),
+  const Text('Screen 3'),
+];
 
-  final List<Widget> screens = [
-    HomeP(),
-    const Text('chardon'),
-    const Text(
-      'miss',
-      style: TextStyle(color: Colors.amber),
-    ),
-    const Text('chardon'),
-    // Add more screens as needed
-  ];
+class NavBar extends StatelessWidget {
+  const NavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavBarBloc, NavBarState>(
-      builder: (context, state) {
-        if (state is NavBarInitial) {
-          selectedIndex = state.tabindex; // Update selectedIndex based on state
-        }
-
-        return Scaffold(
-          body: IndexedStack(
-            index: selectedIndex,
-            children: screens,
-          ),
-          bottomNavigationBar: CurvedNavigationBar(
-            height: 50,
-            index: selectedIndex,
-            onTap: (index) {
-              BlocProvider.of<NavBarBloc>(context).add(Changeindex(tabindex: index));
-            },
-            backgroundColor: Colors.blue,
-            buttonBackgroundColor: Colors.white,
-            color: Colors.blue,
-            animationDuration: const Duration(milliseconds: 300),
-            items: const [
-              // Replace with your actual navigation items
-              Icon(Icons.home, size: 30),
-              Icon(Icons.search, size: 30),
-              // Add more items as needed
-            ],
-          ),
-        );
-      },
+    return BlocProvider(
+      create: (context) => NavBarBloc(), // Provide the NavBarBloc
+      child: BlocBuilder<NavBarBloc, NavBarState>(
+        builder: (context, state) {
+          if (state is NavBarInitial) {
+            return Scaffold(
+              body: bottomNavScreens[state.tabindex], // Display the screen based on current index
+              bottomNavigationBar: BottomNavigationBar(
+                backgroundColor: Colors.white,
+                selectedItemColor: AppColors.secondry,
+                unselectedItemColor: AppColors.black,
+                items: itemNavBar(),
+                currentIndex: state.tabindex,
+                onTap: (index) {
+                  context.read<NavBarBloc>().add(Changeindex(index, tabindex: index)); // Dispatch event to change the index
+                },
+              ),
+            );
+          } else {
+            // Handle initial state or other states if needed
+            return Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          }
+        },
+      ),
     );
   }
 }

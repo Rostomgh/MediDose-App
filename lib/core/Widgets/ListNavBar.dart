@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 
-List<Widget> itemNavBar() {
+List<BottomNavigationBarItem> itemNavBar() {
   return [
-    const Icon(
-      Icons.home,
-      size: 30,
-      color: Colors.black,
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: 'Home',
     ),
-    const Icon(
-      Icons.search,
-      size: 30,
-      color: Colors.black,
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.search),
+      label: 'Search',
     ),
-    const Icon(
-      Icons.add,
-      size: 30,
-      color: Colors.black,
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.add),
+      label: 'Add',
     ),
-    const Icon(
-      Icons.account_balance_outlined,
-      size: 30,
-      color: Colors.black,
+    const BottomNavigationBarItem(
+      icon: Icon(Icons.account_circle),
+      label: 'Profile',
     ),
   ];
 }

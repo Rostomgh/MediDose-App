@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medi_dos_app/core/Router/ErrorRoute.dart';
+import 'package:medi_dos_app/core/Widgets/NavBar.dart';
 import 'package:medi_dos_app/features/Auth/Login.dart';
 import 'package:medi_dos_app/features/Auth/Signin.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Conformation.dart';
@@ -25,6 +26,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_)=>const NewPasswordP());
         case '/home':
         return MaterialPageRoute(builder: (_)=>const HomeP());
+        case '/nav':
+        return MaterialPageRoute(builder: (_)=>const NavBar());
       default:
         return MaterialPageRoute(builder: (_) =>const ErrorRoute());
     }

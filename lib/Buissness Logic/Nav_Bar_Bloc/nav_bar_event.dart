@@ -4,5 +4,5 @@ part of 'nav_bar_bloc.dart';
 abstract class NavBarEvent {}
 final class Changeindex extends NavBarEvent{
   final int tabindex;
-  Changeindex({required this.tabindex});
+  Changeindex(int i, {required this.tabindex});
 }
