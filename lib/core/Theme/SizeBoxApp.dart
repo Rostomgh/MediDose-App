@@ -6,4 +6,5 @@ class AppSizes {
   static const double sicon = 30;
   static const double sizeColumn = 1;
   static const double sizeRow = 16;
+  static const double sizepic = 28;
 }
