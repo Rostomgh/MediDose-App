@@ -14,13 +14,13 @@ class CustomCProfile extends StatelessWidget {
     return Container(
       width: AppSizes.sizewcont,
       height: AppSizes.sizeheightcout,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: AppColors.secondry,
         borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40),bottomRight: Radius.circular(40)),
       ),
       child: Column(
         children: [
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           ClipOval(child: Image.asset('assets/avatar/avatar.jpg',width:120,height: 120,fit: BoxFit.cover,),),
           const SizedBox(height: AppSizes.sizeprof),
           Text(

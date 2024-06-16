@@ -8,10 +8,10 @@ import 'package:medi_dos_app/features/Screen/Home/ProfileScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
 
 List<BottomNavigationBarItem> navItems = [
-  const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Raport'),
-  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Community'),
-  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined), label: 'Profile'),
+  const BottomNavigationBarItem(icon: Icon(Icons.home,size: 14,), label: 'Home'),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined,size: 14,), label: 'Raport',),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined,size: 14,), label: 'Community'),
+  const BottomNavigationBarItem(icon: Icon(Icons.account_box_outlined,size: 14,), label: 'Profile'),
 ];
 
 List<Widget> bottomNavScreens = [
