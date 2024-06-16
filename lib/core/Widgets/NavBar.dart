@@ -4,7 +4,8 @@ import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
 import 'package:medi_dos_app/core/Theme/AppColor.dart';
 import 'package:medi_dos_app/core/Widgets/ListNavBar.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/RaportP.dart';
+import 'package:medi_dos_app/features/Screen/Home/ProfileScreen.dart';
+import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
 
 List<BottomNavigationBarItem> navItems = [
   const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -17,7 +18,7 @@ List<Widget> bottomNavScreens = [
   const HomeP(),
   const RaportP(),
   const Text('Screen 2'),
-  const Text('Screen 3'),
+  const ProfileP(),
 ];
 
 class NavBar extends StatelessWidget {

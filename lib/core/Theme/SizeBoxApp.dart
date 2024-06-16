@@ -7,4 +7,7 @@ class AppSizes {
   static const double sizeColumn = 1;
   static const double sizeRow = 16;
   static const double sizepic = 28;
+  static const double sizewcont = double.infinity;
+  static const double sizeheightcout = 263;
+  static const double sizeprof = 4;
 }
