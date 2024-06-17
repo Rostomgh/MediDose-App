@@ -11,6 +11,8 @@ import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
 import 'package:medi_dos_app/features/Screen/Logo.dart';
 
+import '../../features/Screen/Home/Gmap.dart';
+
 class AppRoute {
   Route? OnGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -34,6 +36,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_)=>const RaportP());
         case '/clinic':
         return MaterialPageRoute(builder: (_)=>const ClinicsP());
+        case '/map':
+        return MaterialPageRoute(builder: (_)=>const GmapP());
       default:
         return MaterialPageRoute(builder: (_) =>const ErrorRoute());
     }

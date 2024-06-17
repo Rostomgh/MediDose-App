@@ -25,13 +25,13 @@ class _HomePState extends State<HomeP> {
           ),
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CategoryScreen(),
-            SizedBox(height: 20),
-            Padding(
+            const CategoryScreen(),
+            const SizedBox(height: 20),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 'Available now',
@@ -42,27 +42,36 @@ class _HomePState extends State<HomeP> {
                 ),
               ),
             ),
-            SizedBox(height: 17),
+            const SizedBox(height: 17),
             CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Clinic Name 1',
               adress: '123 Main St',
               time: '9:00 AM - 5:00 PM',
               number: '123-456-7890',
+              ontap: () {
+                Navigator.pushNamed(context, '/map');
+              },
             ),
-            CustomGrid(
+             CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Pharmacy Name 1',
               adress: '456 Elm St',
               time: '8:00 AM - 8:00 PM',
               number: '987-654-3210',
+                ontap: () {
+                Navigator.pushNamed(context, '/map');
+              },
             ),
-            CustomGrid(
+             CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Veterinary Name 1',
               adress: '789 Oak St',
               time: '10:00 AM - 6:00 PM',
               number: '555-555-5555',
+                ontap: () {
+                Navigator.pushNamed(context, '/map');
+              },
             ),
             // Add more CustomGrid widgets as needed
           ],

@@ -27,19 +27,22 @@ class _ClinicsPState extends State<ClinicsP> {
         ),
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10),
+          const   SizedBox(height: 10),
             CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Clinic Name 1',
               adress: '123 Main St',
               time: '9:00 AM - 5:00 PM',
               number: '123-456-7890',
+              ontap: () {
+                Navigator.pushNamed(context, '/map');
+              },
             ),
-            CustomGrid(
+            /*CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Pharmacy Name 1',
               adress: '456 Elm St',
@@ -52,7 +55,7 @@ class _ClinicsPState extends State<ClinicsP> {
               adress: '789 Oak St',
               time: '10:00 AM - 6:00 PM',
               number: '555-555-5555',
-            ),
+            ),*/
           ],
         ),
       ),

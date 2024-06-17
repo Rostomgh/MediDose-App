@@ -10,7 +10,7 @@ class CustomGrid extends StatefulWidget {
   final String adress;
   final String time;
   final String number;
-  final void Function() ? ontap;
+  final void Function() ontap;
 
   const CustomGrid({
     super.key,
@@ -18,7 +18,8 @@ class CustomGrid extends StatefulWidget {
     required this.Name,
     required this.adress,
     required this.time,
-    required this.number, this.ontap,
+    required this.number,
+    required this.ontap,
   });
 
   @override
@@ -29,24 +30,25 @@ class _CustomGridState extends State<CustomGrid> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding:  EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: ontap,
+        onTap: 
+          widget.ontap,
+        
         child: ResponsiveGridRow(
           children: [
             ResponsiveGridCol(
-               xs: 12,
-                //md: 10,
+              xs: 12,
+              //md: 10,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: AppColors.secondry),
-                    color: Colors.white,
+                  color: Colors.white,
                 ),
                 height: 148,
                 width: 350,
                 alignment: Alignment.centerRight,
-              
                 child: Row(
                   children: [
                     Padding(
