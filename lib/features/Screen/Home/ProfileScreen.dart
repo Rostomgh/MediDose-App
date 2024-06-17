@@ -4,6 +4,7 @@ import 'package:medi_dos_app/core/Theme/SizeBoxApp.dart';
 import 'package:medi_dos_app/core/Widgets/CustomCProfile.dart';
 import 'package:medi_dos_app/core/Widgets/FirstBuild.dart';
 import 'package:medi_dos_app/core/Widgets/Secondbuild.dart';
+import 'package:medi_dos_app/core/Widgets/Thirdbuild.dart';
 
 class ProfileP extends StatefulWidget {
   const ProfileP({super.key});
@@ -44,7 +45,11 @@ class _ProfilePState extends State<ProfileP> {
             SizedBox(
               height: AppSizes.sizeInput,
             ),
-            CustomSBuild()
+            CustomSBuild(),
+              SizedBox(
+              height: AppSizes.sizeInput,
+            ),
+            CustomThBuild()
             //Container(color: Colors.black,height: 1,width: 290,)
           ],
         ),
