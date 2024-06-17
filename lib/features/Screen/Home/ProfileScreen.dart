@@ -38,7 +38,7 @@ class _ProfilePState extends State<ProfileP> {
               num: "+01 234 567 89",
             ),
             SizedBox(
-              height: 32,
+              height: 15,
             ),
             CustomFBuild(),
             SizedBox(

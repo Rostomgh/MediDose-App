@@ -7,7 +7,7 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoryItems = CategoryItem().items;
+    final categoryItems = CategoryItem.getItems(context);
 
     return Container(
       height: 125, // Adjust the height as needed
