@@ -32,11 +32,11 @@ class _HomePState extends State<HomeP> {
             const CategoryScreen(),
             const SizedBox(height: 20),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
                 'Available now',
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontSize: 20,
                   color: AppColors.black,
                 ),
