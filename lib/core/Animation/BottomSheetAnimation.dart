@@ -69,7 +69,7 @@ class _MyDraggableSheetState extends State<MyDraggableSheet> {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.yellow,
+                color: Colors.grey,
                 blurRadius: 10,
                 spreadRadius: 1,
                 offset: Offset(0, 1),

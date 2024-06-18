@@ -27,36 +27,39 @@ class _NewPasswordPState extends State<NewPasswordP> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [   
-          CustomInput(
-            hint: 'New Password',
-            mycontroller: NPassword,
-            obc: false,
-            valid: (value) {
-              if (value == '') {
-                return 'Enter your Password';
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height: AppSizes.sizeInput,),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [   
             CustomInput(
-            hint: 'Confirm Password',
-            mycontroller: NPassword,
-            obc: false,
-            valid: (value) {
-              if (value == '') {
-                return 'Enter your Password';
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height:  AppSizes.sizeBut,),
-          CustomButton(onpress: (){
-            Navigator.pushNamed(context, '/login');
-          }, textB: 'Next',),
-        ],
+              hint: 'New Password',
+              mycontroller: NPassword,
+              obc: false,
+              valid: (value) {
+                if (value == '') {
+                  return 'Enter your Password';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: AppSizes.sizeInput,),
+              CustomInput(
+              hint: 'Confirm Password',
+              mycontroller: NPassword,
+              obc: false,
+              valid: (value) {
+                if (value == '') {
+                  return 'Enter your Password';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height:  AppSizes.sizeBut,),
+            CustomButton(onpress: (){
+              Navigator.pushNamed(context, '/login');
+            }, textB: 'Next',),
+          ],
+        ),
       ),
     );
   }

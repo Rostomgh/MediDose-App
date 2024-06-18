@@ -30,30 +30,33 @@ class _ForgotPasswordPState extends State<ForgotPasswordP> {
       ),
       centerTitle: true,
     ),// Corrected Appar usage
-      body: Column(
-        children: [
-          CustomInput(
-            valid: (value) {
-              if (value == '') {
-                return 'Enter your phone number';
-              }
-              return null;
-            },
-            mycontroller: phone,
-            hint: 'Phone number',
-            obc: false,
-            keyboardType: TextInputType.phone,
-          ),
-          const SizedBox(
-            height: AppSizes.sizeBut,
-          ),
-          CustomButton(
-            onpress: () {
-              Navigator.pushNamed(context, 'ConformationPassword');
-            },
-            textB: 'Next',
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            CustomInput(
+              valid: (value) {
+                if (value == '') {
+                  return 'Enter your phone number';
+                }
+                return null;
+              },
+              mycontroller: phone,
+              hint: 'Phone number',
+              obc: false,
+              keyboardType: TextInputType.phone,
+            ),
+            const SizedBox(
+              height: AppSizes.sizeBut,
+            ),
+            CustomButton(
+              onpress: () {
+                Navigator.pushNamed(context, 'ConformationPassword');
+              },
+              textB: 'Next',
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -11,6 +11,8 @@ import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/PharmacyScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
+import 'package:medi_dos_app/features/Screen/Home/ReservationScreen.dart';
+import 'package:medi_dos_app/features/Screen/Home/veterinary.dart';
 
 import '../../features/Screen/Home/Gmap.dart';
 
@@ -18,31 +20,35 @@ class AppRoute {
   Route? OnGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/Logo':
-        return MaterialPageRoute(builder: (_) =>const LogoP());
-        case '/login':
-        return MaterialPageRoute(builder: (_) =>const LoginP());
-        case '/Create':
-        return MaterialPageRoute(builder: (_) =>const SignIn());
-        case 'ForgotPassword':
-        return MaterialPageRoute(builder: (_)=>const ForgotPasswordP());
-        case 'ConformationPassword':
-        return MaterialPageRoute(builder: (_)=>const ConformationPasswordP());
-        case 'newPassword':
-        return MaterialPageRoute(builder: (_)=>const NewPasswordP());
-        case '/home':
-        return MaterialPageRoute(builder: (_)=>const HomeP());
-        case '/nav':
-        return MaterialPageRoute(builder: (_)=>const NavBar());
-        case '/raport':
-        return MaterialPageRoute(builder: (_)=>const RaportP());
-        case '/clinic':
-        return MaterialPageRoute(builder: (_)=>const ClinicsP());
-        case '/map':
-        return MaterialPageRoute(builder: (_)=>const GmapP());
-        case '/pharm':
-        return MaterialPageRoute(builder: (_)=>const PharmacyP());
+        return MaterialPageRoute(builder: (_) => const LogoP());
+      case '/login':
+        return MaterialPageRoute(builder: (_) => const LoginP());
+      case '/Create':
+        return MaterialPageRoute(builder: (_) => const SignIn());
+      case 'ForgotPassword':
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordP());
+      case 'ConformationPassword':
+        return MaterialPageRoute(builder: (_) => const ConformationPasswordP());
+      case 'newPassword':
+        return MaterialPageRoute(builder: (_) => const NewPasswordP());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => const HomeP());
+      case '/nav':
+        return MaterialPageRoute(builder: (_) => const NavBar());
+      case '/raport':
+        return MaterialPageRoute(builder: (_) => const RaportP());
+      case '/clinic':
+        return MaterialPageRoute(builder: (_) => const ClinicsP());
+      case '/map':
+        return MaterialPageRoute(builder: (_) => const GmapP());
+      case '/pharm':
+        return MaterialPageRoute(builder: (_) => const PharmacyP());
+      case 'veterinary':
+        return MaterialPageRoute(builder: (_) => const veterinaryP());
+      case '/reservation':
+        return MaterialPageRoute(builder: (_) => const ReservationP());
       default:
-        return MaterialPageRoute(builder: (_) =>const ErrorRoute());
+        return MaterialPageRoute(builder: (_) => const ErrorRoute());
     }
   }
 }

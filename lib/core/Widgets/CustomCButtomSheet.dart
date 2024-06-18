@@ -4,7 +4,8 @@ import 'package:medi_dos_app/core/Theme/SizeBoxApp.dart';
 import 'package:medi_dos_app/core/Widgets/CustomGrid.dart';
 
 class CustomCBottomSheet extends StatelessWidget {
-  const CustomCBottomSheet({super.key});
+
+  const CustomCBottomSheet({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,9 @@ class CustomCBottomSheet extends StatelessWidget {
             height: 44,
             width: 125,
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: (){
+                Navigator.pushNamed(context, '/reservation');
+              },
               color: AppColors.secondry,
               shape: RoundedRectangleBorder(
                 borderRadius:
@@ -48,7 +51,9 @@ class CustomCBottomSheet extends StatelessWidget {
             height: 44,
             width: 125,
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: (){
+                Navigator.pop(context);
+              },
               color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius:

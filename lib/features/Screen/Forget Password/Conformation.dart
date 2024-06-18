@@ -26,31 +26,34 @@ class _ConformationPasswordPState extends State<ConformationPasswordP> {
       ),
       centerTitle: true,
     ),
-    body: Column(
-        children: [
-          CustomInput(
-            valid: (value) {
-              if (value == '') {
-                return 'Enter code of confimation';
-              }
-              return null;
-            },
-            mycontroller: code,
-            hint: 'code of confimation',
-            obc: false,
-            keyboardType: TextInputType.phone,
-          ),
-          const SizedBox(
-            height: AppSizes.sizeBut,
-          ),
-          CustomButton(
-            onpress: () {
-              Navigator.pushNamed(context, 'newPassword');
-            },
-            textB: 'Next',
-          ),
-        ],
-      ),
+    body: Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Column(
+          children: [
+            CustomInput(
+              valid: (value) {
+                if (value == '') {
+                  return 'Enter code of confimation';
+                }
+                return null;
+              },
+              mycontroller: code,
+              hint: 'code of confimation',
+              obc: false,
+              keyboardType: TextInputType.phone,
+            ),
+            const SizedBox(
+              height: AppSizes.sizeBut,
+            ),
+            CustomButton(
+              onpress: () {
+                Navigator.pushNamed(context, 'newPassword');
+              },
+              textB: 'Next',
+            ),
+          ],
+        ),
+    ),
     );
   }
 }
