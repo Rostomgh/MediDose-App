@@ -7,17 +7,21 @@ class CategoryItem {
       CategoryModel(
         image: "assets/Category/Cat1.jpg",
         title: "Clinics",
-        navigate: () { Navigator.pushNamed(context, '/clinic'); },
+        navigate: () {
+          Navigator.pushNamed(context, '/clinic');
+        },
       ),
       CategoryModel(
         image: "assets/Category/Cat2.jpg",
         title: "Pharmacy",
-        navigate: () { /* Navigate to Pharmacy */ },
+        navigate: () {
+          Navigator.pushNamed(context, "/pharm");
+        },
       ),
       CategoryModel(
         image: "assets/Category/Cat3.jpg",
         title: "Veterinary",
-        navigate: () { /* Navigate to Veterinary */ },
+        navigate: () {/* Navigate to Veterinary */},
       ),
     ];
   }

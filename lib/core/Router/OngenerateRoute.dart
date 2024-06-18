@@ -8,6 +8,7 @@ import 'package:medi_dos_app/features/Screen/Forget%20Password/ForgetPassword.da
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart';
 import 'package:medi_dos_app/features/Screen/Home/ClinicsScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
+import 'package:medi_dos_app/features/Screen/Home/PharmacyScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
 
@@ -38,6 +39,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_)=>const ClinicsP());
         case '/map':
         return MaterialPageRoute(builder: (_)=>const GmapP());
+        case '/pharm':
+        return MaterialPageRoute(builder: (_)=>const PharmacyP());
       default:
         return MaterialPageRoute(builder: (_) =>const ErrorRoute());
     }

@@ -49,7 +49,7 @@ class _ForgotPasswordPState extends State<ForgotPasswordP> {
           ),
           CustomButton(
             onpress: () {
-              Navigator.pushNamed(context, 'Conformation');
+              Navigator.pushNamed(context, 'ConformationPassword');
             },
             textB: 'Next',
           ),

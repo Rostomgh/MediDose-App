@@ -67,7 +67,9 @@ class _LoginPState extends State<LoginP> {
             onTapC: () {
               Navigator.pushNamed(context, '/Create');
             },
-            onTapP: (){},
+            onTapP: (){
+              Navigator.pushNamed(context, 'ForgotPassword');
+            },
           )
         ]),
       ),

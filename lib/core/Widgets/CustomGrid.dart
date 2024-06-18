@@ -63,7 +63,7 @@ class _CustomGridState extends State<CustomGrid> {
                         Text(
                           widget.Name,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
@@ -72,7 +72,7 @@ class _CustomGridState extends State<CustomGrid> {
                         const Text(
                           'Clinic',
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
@@ -81,7 +81,7 @@ class _CustomGridState extends State<CustomGrid> {
                         Text(
                           widget.adress,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
@@ -90,7 +90,7 @@ class _CustomGridState extends State<CustomGrid> {
                         Text(
                           widget.time,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
@@ -99,7 +99,7 @@ class _CustomGridState extends State<CustomGrid> {
                         Text(
                           widget.number,
                           style: const TextStyle(
-                            fontSize: 15,
+                            fontSize: 17,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),

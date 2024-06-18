@@ -31,12 +31,12 @@ class _ConformationPasswordPState extends State<ConformationPasswordP> {
           CustomInput(
             valid: (value) {
               if (value == '') {
-                return 'Enter your phone number';
+                return 'Enter code of confimation';
               }
               return null;
             },
             mycontroller: code,
-            hint: 'Phone number',
+            hint: 'code of confimation',
             obc: false,
             keyboardType: TextInputType.phone,
           ),
@@ -45,7 +45,7 @@ class _ConformationPasswordPState extends State<ConformationPasswordP> {
           ),
           CustomButton(
             onpress: () {
-              Navigator.pushNamed(context, 'Conformation');
+              Navigator.pushNamed(context, 'newPassword');
             },
             textB: 'Next',
           ),
