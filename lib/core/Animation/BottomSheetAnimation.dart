@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class MyDraggableSheet extends StatefulWidget {
   final Widget child;
-  const MyDraggableSheet({super.key, required this.child});
+
+  const MyDraggableSheet({Key? key, required this.child}) : super(key: key);
 
   @override
-  State<MyDraggableSheet> createState() => _MyDraggableSheetState();
+  _MyDraggableSheetState createState() => _MyDraggableSheetState();
 }
 
 class _MyDraggableSheetState extends State<MyDraggableSheet> {
@@ -50,72 +51,59 @@ class _MyDraggableSheetState extends State<MyDraggableSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return DraggableScrollableSheet(
-        key: sheet,
-        initialChildSize: 0.5,
-        maxChildSize: 0.95,
-        minChildSize: 0,
-        expand: true,
-        snap: true,
-        snapSizes: [
-          60 / constraints.maxHeight,
-          0.5,
-        ],
-        controller: controller,
-        builder: (BuildContext context, ScrollController scrollController) {
-          return DecoratedBox(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 10,
-                  spreadRadius: 1,
-                  offset: Offset(0, 1),
-                ),
-              ],
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(22),
-                topRight: Radius.circular(22),
+    return DraggableScrollableSheet(
+      key: sheet,
+      initialChildSize: 0.5,
+      maxChildSize: 0.95,
+      minChildSize: 0,
+      expand: true,
+      snap: true,
+      snapSizes: [
+        60 / MediaQuery.of(context).size.height,
+        0.5,
+      ],
+      controller: controller,
+      builder: (BuildContext context, ScrollController scrollController) {
+        return DecoratedBox(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.yellow,
+                blurRadius: 10,
+                spreadRadius: 1,
+                offset: Offset(0, 1),
               ),
+            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(22),
+              topRight: Radius.circular(22),
             ),
-            child: CustomScrollView(
-              controller: scrollController,
-              slivers: [
-                topButtonIndicator(),
-                SliverToBoxAdapter(
-                  child: widget.child,
+          ),
+          child: CustomScrollView(
+            controller: scrollController,
+            slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    Container(
+                      width: 100,
+                      margin: const EdgeInsets.only(top: 10, bottom: 10),
+                      height: 5,
+                      decoration: const BoxDecoration(
+                        color: Colors.black45,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      ),
+                    ),
+                    widget.child,
+                  ],
                 ),
-              ],
-            ),
-          );
-        },
-      );
-    });
-  }
-
-  SliverToBoxAdapter topButtonIndicator() {
-    return SliverToBoxAdapter(
-      child: Container(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Container(
-                    child: Center(
-                        child: Wrap(children: <Widget>[
-                          Container(
-                              width: 100,
-                              margin: const EdgeInsets.only(top: 10, bottom: 10),
-                              height: 5,
-                              decoration: const BoxDecoration(
-                                color: Colors.black45,
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              )),
-                        ]))),
-              ])),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

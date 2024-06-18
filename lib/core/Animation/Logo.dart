@@ -16,7 +16,7 @@ class _LogoPState extends State<LogoP> {
       body: Center(
         child: AnimatedSplashScreen(
           splashTransition: SplashTransition.fadeTransition,
-          splash: Image.asset('assets/Logo/Logo.jpg',width: 200,height: 200,),
+          splash: Image.asset('assets/Logo/Logo.jpg',width: 300,height: 300,),
           nextScreen:const OnboardingP(),),
           
       ),

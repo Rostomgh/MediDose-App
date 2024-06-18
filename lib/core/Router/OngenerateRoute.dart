@@ -9,7 +9,7 @@ import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart'
 import 'package:medi_dos_app/features/Screen/Home/ClinicsScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
-import 'package:medi_dos_app/features/Screen/Logo.dart';
+import 'package:medi_dos_app/core/Animation/Logo.dart';
 
 import '../../features/Screen/Home/Gmap.dart';
 
