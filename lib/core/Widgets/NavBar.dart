@@ -34,6 +34,9 @@ class NavBar extends StatelessWidget {
             return Scaffold(
               body: bottomNavScreens[state.tabindex], // Display the screen based on current index
               bottomNavigationBar: BottomNavigationBar(
+                selectedLabelStyle:const  TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+                showSelectedLabels: true,
+                showUnselectedLabels: true,
                 backgroundColor: Colors.white,
                 selectedItemColor: AppColors.secondry,
                 unselectedItemColor: AppColors.black,

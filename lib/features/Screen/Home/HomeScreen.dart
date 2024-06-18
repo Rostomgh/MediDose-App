@@ -42,7 +42,7 @@ class _HomePState extends State<HomeP> {
                 ),
               ),
             ),
-            const SizedBox(height: 17),
+            const SizedBox(height: 15),
             CustomGrid(
               image: 'assets/Clinc/Clinc.jpg',
               Name: 'Clinic Name 1',

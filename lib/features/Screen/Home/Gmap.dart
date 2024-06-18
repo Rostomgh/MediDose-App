@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/widgets.dart';
+import 'package:medi_dos_app/core/Animation/BottomSheetAnimation.dart';
 import 'package:medi_dos_app/core/Theme/AppColor.dart';
+import 'package:medi_dos_app/core/Widgets/CustomCButtomSheet.dart';
 
 class GmapP extends StatefulWidget {
   const GmapP({super.key});
@@ -21,20 +23,25 @@ class _GmapPState extends State<GmapP> {
       appBar: AppBar(
         elevation: 4,
         centerTitle: true,
-        title: Text("Address",style: TextStyle(
+        title: const Text("Address",style: TextStyle(
             color: AppColors.black,
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),),
       ),
-      body: GoogleMap(
-              myLocationButtonEnabled: true,
-              mapType: MapType.normal,
-              initialCameraPosition: CameraPosition(
-                target: LatLng(latitude, longitude),
-                zoom: 5,
-              ),
-            ),
+      body: const Column(
+        children: [
+          /*GoogleMap(
+                  myLocationButtonEnabled: true,
+                  mapType: MapType.normal,
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(latitude,longitude),
+                    zoom: 5,
+                  ),
+                ),*/
+              Expanded(child: MyDraggableSheet(child:CustomCBottomSheet() ))
+        ],
+      ),
           );
 
   

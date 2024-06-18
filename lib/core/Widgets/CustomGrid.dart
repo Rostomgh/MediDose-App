@@ -10,7 +10,7 @@ class CustomGrid extends StatefulWidget {
   final String adress;
   final String time;
   final String number;
-  final void Function() ontap;
+  final void Function()? ontap;
 
   const CustomGrid({
     super.key,

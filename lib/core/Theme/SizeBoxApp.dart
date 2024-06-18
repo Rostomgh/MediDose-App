@@ -10,5 +10,6 @@ class AppSizes {
   static const double sizewcont = double.infinity;
   static const double sizeheightcout = 263;
   static const double sizeprof = 4;
+  static const double sizebsheet = 35;
   
 }
