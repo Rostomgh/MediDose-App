@@ -11,21 +11,33 @@ class ReservationP extends StatefulWidget {
 class _ReservationPState extends State<ReservationP> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Stack(children: [
-      Image(
-        image: AssetImage(
-          'assets/raport/imgc.png',
+    return Scaffold(
+        appBar: AppBar(
+          elevation: 1,
         ),
-        width: double.infinity,
-        height: 390,
-      ),
-      Center(
-          child: CustomReserve(
-        address: 'Batna.Kchida',
-        name: 'AL-Ihsaniyat',
-        phone: '033224214',
-      ))
-    ]));
+        body: const Column(
+          children: [
+            Stack(children: [
+              Image(
+                image: AssetImage(
+                  'assets/raport/imgc.png',
+                ),
+                width: double.infinity,
+                height: 390,
+              ),        
+                Positioned(
+                  top: 250,
+                left: 43,
+                right: 42,
+                
+                child: CustomReserve(
+                            address: 'Batna.Kchida',
+                            name: 'AL-Ihsaniyat',
+                            phone: '033224214',
+                          ),
+              )
+            ]),
+          ],
+        ));
   }
 }

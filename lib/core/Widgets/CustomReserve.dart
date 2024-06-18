@@ -14,14 +14,8 @@ class CustomReserve extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 113,
-      width: 308,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(17)),
-        color: AppColors.secondry,
-      
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(25.0),
       child: ResponsiveGridRow(children: [
         ResponsiveGridCol(
           xs: 12,
@@ -31,14 +25,14 @@ class CustomReserve extends StatelessWidget {
                 border: Border.all(
                     color: AppColors
                         .secondry), // Ensure AppColors is correctly defined
-                color: Colors.white,
+                color: AppColors.secondry,
               ),
-              height: 148,
-              width: 350,
+              height: 113,
+              width: 308,
               alignment: Alignment.centerRight,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -52,25 +46,32 @@ class CustomReserve extends StatelessWidget {
                     ),
                   ),
                   Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Icon(Icons.location_on),
-                      Text(
-                        address,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.black54,
+                      const Icon(Icons.location_on,color: Colors.white,),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          address,
+                          style: const TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
                   ),
                   Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Icon(Icons.phone_callback_outlined),
+                      const Icon(Icons.phone_callback_outlined,color: Colors.white,),
                       Text(
                         phone,
                         style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.black54,
+                          fontSize: 17,
+                          color: Colors.white,
                         ),
                       ),
                     ],
