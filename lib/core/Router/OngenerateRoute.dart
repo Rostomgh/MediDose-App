@@ -6,6 +6,7 @@ import 'package:medi_dos_app/features/Auth/Signin.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Conformation.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/ForgetPassword.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart';
+import 'package:medi_dos_app/features/Screen/Home/BloodScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/ClinicsScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/PharmacyScreen.dart';
@@ -47,6 +48,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const veterinaryP());
       case '/reservation':
         return MaterialPageRoute(builder: (_) => const ReservationP());
+        case '/blood':
+        return MaterialPageRoute(builder: (_)=> const BloodP());
       default:
         return MaterialPageRoute(builder: (_) => const ErrorRoute());
     }

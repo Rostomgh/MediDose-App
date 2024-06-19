@@ -5,6 +5,7 @@ import 'package:medi_dos_app/core/Router/OngenerateRoute.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

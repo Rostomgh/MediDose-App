@@ -60,29 +60,33 @@ class _OnboardingPState extends State<OnboardingP> {
                   dotHeight: 10,
                 ),
               ),
-              const SizedBox(height: 45),
-              ElevatedButton(
-                onPressed: () {
-                  if (isLastPage) {
-                    Navigator.pushReplacementNamed(context, '/login');
-                  } else {
-                    pageController.nextPage(
-                      duration: const Duration(milliseconds: 600),
-                      curve: Curves.easeIn,
-                    );
-                  }
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    Color(0xff56A2A6)
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: ElevatedButton(
+                  
+                  onPressed: () {
+                    if (isLastPage) {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    } else {
+                      pageController.nextPage(
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.easeIn,
+                      );
+                    }
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Color(0xff56A2A6)
+                    ),
+                    padding: MaterialStateProperty.all(
+                      const EdgeInsets.symmetric(horizontal: 150, vertical: 12),
+                    ),
                   ),
-                  padding: MaterialStateProperty.all(
-                    const EdgeInsets.symmetric(horizontal: 150, vertical: 12),
+                  child: Text(
+                    isLastPage ? "SIGN IN" : "NEXT",
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                   ),
-                ),
-                child: Text(
-                  isLastPage ? "SIGN IN" : "NEXT",
-                  style: const TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
             ],

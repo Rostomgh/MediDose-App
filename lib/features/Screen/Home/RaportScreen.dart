@@ -15,6 +15,7 @@ class _RaportPState extends State<RaportP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 3,
         shadowColor: Colors.grey.shade300,
@@ -45,13 +46,13 @@ class _RaportPState extends State<RaportP> {
               CustomRaportC(
                 title: 'Weight',
                 Stitle: '100',
-                img: 'assets/raport/bpm.png',
+                img: 'assets/raport/messur.png',
                 unit: 'KG',
               ),
               CustomRaportC(
                 title: 'length',
                 Stitle: '180',
-                img: 'assets/raport/bpm.png',
+                img: 'assets/raport/messur.png',
                 unit: 'CM',
               ),
               const SizedBox(height: 20),

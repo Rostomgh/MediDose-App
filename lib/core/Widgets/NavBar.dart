@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
 import 'package:medi_dos_app/core/Theme/AppColor.dart';
 import 'package:medi_dos_app/core/Widgets/ListNavBar.dart';
+import 'package:medi_dos_app/features/Screen/Home/BloodScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/ProfileScreen.dart';
 import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
@@ -17,7 +18,7 @@ List<BottomNavigationBarItem> navItems = [
 List<Widget> bottomNavScreens = [
   const HomeP(),
   const RaportP(),
-  const Text('Screen 2'),
+  const BloodP(),
   const ProfileP(),
 ];
 

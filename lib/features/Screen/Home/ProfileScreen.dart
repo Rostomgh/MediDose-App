@@ -18,6 +18,7 @@ class _ProfilePState extends State<ProfileP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 3,
         shadowColor: Colors.grey.shade300,
