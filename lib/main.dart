@@ -3,8 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
 import 'package:medi_dos_app/core/Router/OngenerateRoute.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
+import 'package:medi_dos_app/core/helpers/BlocObserve.dart';
+import 'package:medi_dos_app/core/helpers/DioHelper.dart';
 
-void main() {
+void main() async{
+  DioHelper.init();
+  Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
