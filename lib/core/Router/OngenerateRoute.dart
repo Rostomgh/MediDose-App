@@ -6,16 +6,16 @@ import 'package:medi_dos_app/features/Auth/Signin.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Conformation.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/ForgetPassword.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart';
-import 'package:medi_dos_app/features/Screen/Home/BloodScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/ClinicsScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/PharmacyScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/BloodScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/ClinicsScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/Home/HomeScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/PharmacyScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/RaportScreen.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
-import 'package:medi_dos_app/features/Screen/Home/ReservationScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/veterinary.dart';
+import 'package:medi_dos_app/features/Screen/App/ReservationScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/veterinary.dart';
 
-import '../../features/Screen/Home/Gmap.dart';
+import '../../features/Screen/App/Gmap.dart';
 
 class AppRoute {
   Route? OnGenerateRoute(RouteSettings settings) {

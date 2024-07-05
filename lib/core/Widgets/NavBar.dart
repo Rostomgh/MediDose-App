@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:medi_dos_app/Buissness%20Logic/Nav_Bar_Bloc/nav_bar_bloc.dart';
 import 'package:medi_dos_app/core/Theme/AppColor.dart';
 import 'package:medi_dos_app/core/Widgets/ListNavBar.dart';
-import 'package:medi_dos_app/features/Screen/Home/BloodScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/HomeScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/ProfileScreen.dart';
-import 'package:medi_dos_app/features/Screen/Home/RaportScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/BloodScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/Home/HomeScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/ProfileScreen.dart';
+import 'package:medi_dos_app/features/Screen/App/RaportScreen.dart';
 
 List<BottomNavigationBarItem> navItems = [
   const BottomNavigationBarItem(icon: Icon(Icons.home,size: 14,), label: 'Home'),
