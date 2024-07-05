@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medi_dos_app/core/Theme/AppColor.dart';
-import 'package:medi_dos_app/core/Theme/SizeBoxApp.dart';
-
 import 'package:responsive_grid/responsive_grid.dart';
 
-class CustomGrid extends StatefulWidget {
-  final String image;
+class CustomGrid extends StatelessWidget {
+  final String? image;
   final String Name;
   final String adress;
   final String time;
@@ -14,7 +12,7 @@ class CustomGrid extends StatefulWidget {
 
   const CustomGrid({
     super.key,
-    required this.image,
+    this.image,
     required this.Name,
     required this.adress,
     required this.time,
@@ -23,23 +21,15 @@ class CustomGrid extends StatefulWidget {
   });
 
   @override
-  State<CustomGrid> createState() => _CustomGridState();
-}
-
-class _CustomGridState extends State<CustomGrid> {
-  @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: 
-          widget.ontap,
-        
+        onTap: ontap,
         child: ResponsiveGridRow(
           children: [
             ResponsiveGridCol(
               xs: 12,
-              //md: 10,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -47,64 +37,71 @@ class _CustomGridState extends State<CustomGrid> {
                   color: Colors.white,
                 ),
                 height: 148,
-                width: 350,
-                alignment: Alignment.centerRight,
+                width: double.infinity, // Adjust width for responsiveness
+                alignment: Alignment.center,
                 child: Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(widget.image, height: 128, width: 118),
+                      child: Image.asset(
+                        image ?? 'assets/default_image.jpg',
+                        height: 128,
+                        width: 118,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    const SizedBox(width: AppSizes.sizeRow),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          widget.Name,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            Name,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: AppSizes.sizeColumn),
-                        const Text(
-                          'Clinic',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                          const SizedBox(height: 8),
+                          const Text(
+                            'Clinic', // Placeholder text, adjust as per your data
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: AppSizes.sizeColumn),
-                        Text(
-                          widget.adress,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                          const SizedBox(height: 8),
+                          Text(
+                            adress,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: AppSizes.sizeColumn),
-                        Text(
-                          widget.time,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                          const SizedBox(height: 8),
+                          Text(
+                            time,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: AppSizes.sizeColumn),
-                        Text(
-                          widget.number,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                          const SizedBox(height: 8),
+                          Text(
+                            number,
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),
