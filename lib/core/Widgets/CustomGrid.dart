@@ -36,7 +36,7 @@ class CustomGrid extends StatelessWidget {
                   border: Border.all(color: AppColors.secondry),
                   color: Colors.white,
                 ),
-                height: 148,
+                height: 180,
                 width: double.infinity, // Adjust width for responsiveness
                 alignment: Alignment.center,
                 child: Row(
