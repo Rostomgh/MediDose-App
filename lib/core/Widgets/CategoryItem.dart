@@ -21,7 +21,9 @@ class CategoryItem {
       CategoryModel(
         image: "assets/Category/Cat3.jpg",
         title: "Veterinary",
-        navigate: () {/* Navigate to Veterinary */},
+        navigate: () {
+          Navigator.pushNamed(context, 'veterinary');
+        },
       ),
     ];
   }
