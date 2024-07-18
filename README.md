@@ -12,7 +12,7 @@ MediDos is a healthcare app built using Flutter,
 # Installation
 Clone this repository:
 ```
-   git clone https://github.com/Rostomgh/MediDose-App
+git clone https://github.com/Rostomgh/MediDose-App
    ```
 Navigate to the project directory:
 ```
