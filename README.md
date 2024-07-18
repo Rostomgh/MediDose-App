@@ -1,16 +1,38 @@
-# medi_dos_app
 
-A new Flutter project.
 
-## Getting Started
+![FirstPic](assets/Readme/First.png)
+# MediDos Mobile App
+MediDos is a healthcare app built using Flutter, 
+ It aims to streamline healthcare services by allowing users to schedule appointments with clinics, veterinary clinics, and pharmacies. Additionally, the app helps users locate blood donation centers and various healthcare facilities, promoting accessibility and convenience in healthcare management.
+# MediDos Screens
+## *Auth Screens*
+![AuthPic](assets/Readme/Auth.png)
+## *Events*
+![Event](assets/Readme/Event.png)
+# Installation
+Clone this repository:
+```
+   git clone https://github.com/Rostomgh/MediDose-App
+   ```
+Navigate to the project directory:
+```
+cd medi_dos_app
+```   
+Install dependencies:
+```
+flutter pub get
+```
+Run the app:
+```
+flutter run
+```
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+ 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
+
+
