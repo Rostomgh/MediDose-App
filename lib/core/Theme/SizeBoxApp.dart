@@ -13,4 +13,6 @@ class AppSizes {
   static const double sizebsheet = 35;
   static const double sizewrap = 10;
   static const double sizecard = 18;
+  static const double sizeDate = 249;
+  static const double hDate =50;
 }
