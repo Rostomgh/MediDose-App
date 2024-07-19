@@ -19,8 +19,12 @@ class CustomInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(7.0),
-      child: SizedBox(
+      child: Container(
         width: 329,
+        decoration: BoxDecoration(
+          border: Border.all(width: 0.7),
+            borderRadius: BorderRadius.circular(10.57),
+        ),
         child: TextFormField(
           keyboardType:keyboardType ,
           obscureText: obc,
@@ -29,12 +33,13 @@ class CustomInput extends StatelessWidget {
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
             border: OutlineInputBorder(
+            
               borderRadius: BorderRadius.circular(10.57),
             ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
             hintText: hint,
-            hintStyle: TextStyle(color: AppColors.textcolor,fontWeight: FontWeight.w300),
+            hintStyle: TextStyle(color: AppColors.textcolor,fontWeight: FontWeight.w500),
           ),
         ),
       ),
