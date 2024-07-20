@@ -71,7 +71,9 @@ class _ReservationPState extends State<ReservationP> {
                 left: 43,
                 right: 42,
                 child: CustomButton(
-                  onpress: () {},
+                  onpress: () {
+                    Navigator.pushNamed(context, '/home');
+                  },
                   textB: 'Confirm',
                 ),
               ),
