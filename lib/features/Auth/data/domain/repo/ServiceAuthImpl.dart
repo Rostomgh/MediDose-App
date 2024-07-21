@@ -1,7 +1,7 @@
 import 'package:medi_dos_app/core/Services/ApiServices.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/service/ServiceAuth.dart';
-// Corrected the path to ServiceAuth.dart
-import 'package:medi_dos_app/features/Auth/data/model/UserModel.dart'; // Corrected the capitalization
+
+import 'package:medi_dos_app/features/Auth/data/model/UserModel.dart'; 
 
 class authRepo implements ServiceAuth {
   final ApiService apiService = ApiService();
