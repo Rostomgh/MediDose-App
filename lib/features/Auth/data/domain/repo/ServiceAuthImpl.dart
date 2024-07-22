@@ -28,7 +28,7 @@ class authRepo implements ServiceAuth {
   @override
   Future<UserModel> Signup(String email, String password, String name) async {
     final response = await apiService.post(
-      endPoint:Endpoint.Login,
+      endPoint:Endpoint.SignUp,
       query: {'email': email, 'password': password, 'name': name},
     );
     if (response.statusCode == 200) {
