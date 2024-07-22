@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:medi_dos_app/core/Services/Endpoint.dart';
 
 class DioHelper {
   static late Dio dio;
   static init() {
     dio = Dio(BaseOptions(
-      baseUrl: 'https://api.medi-dos.com/api/',
+      baseUrl: Endpoint.BaseUrl,
       connectTimeout: const Duration(seconds: 60),
       receiveTimeout: const Duration(seconds: 60),
       receiveDataWhenStatusError: true,

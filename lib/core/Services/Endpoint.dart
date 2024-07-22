@@ -1,4 +1,5 @@
 class Endpoint {
-  static String Login = 'http://localhost:3000/user/login';
-  static String SignUp = 'http://localhost:3000/user/signup';
+  static String BaseUrl = 'http://localhost:3000/';
+  static String Login = 'user/login';
+  static String SignUp = 'user/signup';
 }

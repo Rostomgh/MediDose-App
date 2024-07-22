@@ -4,7 +4,7 @@ import 'package:medi_dos_app/features/Auth/data/domain/service/ServiceAuth.dart'
 
 import 'package:medi_dos_app/features/Auth/data/model/UserModel.dart'; 
 
-class authRepo implements ServiceAuth {
+class AuthRepo implements ServiceAuth {
   final ApiService apiService = ApiService();
 
   @override
