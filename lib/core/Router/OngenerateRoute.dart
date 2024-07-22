@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medi_dos_app/core/Router/ErrorRoute.dart';
 import 'package:medi_dos_app/core/Widgets/NavBar.dart';
-import 'package:medi_dos_app/features/Auth/Login.dart';
-import 'package:medi_dos_app/features/Auth/Signin.dart';
+import 'package:medi_dos_app/features/Auth/presentation/view/Login.dart';
+import 'package:medi_dos_app/features/Auth/presentation/view/Signin.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Conformation.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/ForgetPassword.dart';
 import 'package:medi_dos_app/features/Screen/Forget%20Password/Newpassword.dart';
