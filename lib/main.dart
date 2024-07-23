@@ -5,8 +5,9 @@ import 'package:medi_dos_app/core/Router/OngenerateRoute.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
 import 'package:medi_dos_app/core/helpers/BlocObserve.dart';
 import 'package:medi_dos_app/core/helpers/DioHelper.dart';
-import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Logic/auth_bloc.dart';
-import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart'; // Add this import
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Login/auth_bloc.dart';
+import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart';
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Signup/signup_bloc.dart'; // Add this import
 
 void main() async {
   DioHelper.init();
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<AuthBloc>(
           create: (context) => AuthBloc(AuthRepo()), 
         ),
+        BlocProvider<SignupBloc>(create: (context) => SignupBloc(AuthRepo())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

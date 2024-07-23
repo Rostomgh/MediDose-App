@@ -1,8 +1,7 @@
 import 'package:medi_dos_app/core/Services/ApiServices.dart';
 import 'package:medi_dos_app/core/Services/Endpoint.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/service/ServiceAuth.dart';
-
-import 'package:medi_dos_app/features/Auth/data/model/UserModel.dart'; 
+import 'package:medi_dos_app/features/Auth/data/model/UserModel.dart';
 
 class AuthRepo implements ServiceAuth {
   final ApiService apiService = ApiService();
@@ -10,7 +9,7 @@ class AuthRepo implements ServiceAuth {
   @override
   Future<UserModel> login(String email, String password) async {
     final response = await apiService.post(
-      endPoint:Endpoint.Login,
+      endPoint: Endpoint.Login,
       query: {'email': email, 'password': password},
     );
     if (response.statusCode == 200) {
@@ -26,10 +25,14 @@ class AuthRepo implements ServiceAuth {
   }
 
   @override
-  Future<UserModel> Signup(String email, String password, String name) async {
+  Future<UserModel> Signup(
+    String username,
+    String email,
+    String password,
+  ) async {
     final response = await apiService.post(
-      endPoint:Endpoint.SignUp,
-      query: {'email': email, 'password': password, 'name': name},
+      endPoint: Endpoint.SignUp,
+      query: {'username': username, 'email': email, 'password': password},
     );
     if (response.statusCode == 200) {
       try {
@@ -38,8 +41,8 @@ class AuthRepo implements ServiceAuth {
         throw Exception('Failed to parse user data: $e');
       }
     } else {
-      print("Signin Failed");
-      throw Exception('Signin Failed');
+      print("Signup Failed: ${response.statusCode}");
+      throw Exception('Signup Failed: ${response.statusCode}');
     }
   }
 }

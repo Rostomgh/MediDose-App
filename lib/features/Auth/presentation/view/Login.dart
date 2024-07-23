@@ -5,7 +5,7 @@ import 'package:medi_dos_app/core/Theme/SizeBoxApp.dart';
 import 'package:medi_dos_app/core/Widgets/CustomButton.dart';
 import 'package:medi_dos_app/core/Widgets/CustomInput.dart';
 import 'package:medi_dos_app/core/Widgets/CustomTextRich.dart';
-import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Logic/auth_bloc.dart';
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Login/auth_bloc.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart';
 
 class LoginP extends StatefulWidget {
