@@ -1,21 +1,24 @@
 import 'package:flutter/foundation.dart';
 
 class UserModel {
-  final String name;
-  final String email;
-  final String token;
+  final String? name;
+  final String? email;
+  final String? password;
+  final String? token;
 
   UserModel({
-    required this.name,
-    required this.email,
-    required this.token,
+    this.name,
+    this.email,
+    this.password,
+    this.token,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      name: json['name'],
-      email: json['email'],
-      token: json['token'],
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+      password: json['password'] as String?,
+      token: json['token'] as String?,
     );
   }
 
@@ -23,6 +26,7 @@ class UserModel {
     return {
       'name': name,
       'email': email,
+      'password': password,
       'token': token,
     };
   }

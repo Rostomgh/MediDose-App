@@ -16,13 +16,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future<void> _onLogin(AuthLogin event, Emitter<AuthState> emit) async {
     String email = event.email;
     String password = event.password;
-
     emit(AuthLoading());
 
     try {
-      final user = await authRepo.login(email, password);
+         print('Attempting login for email: $email');
+      final user = await authRepo.login(event.email, event.password);
+      print('Login successful: ${user.email}');
       emit(AuthSuccess(user));
     } catch (e) {
+        print('Login failed: $e');
       emit(Autherror(e.toString()));
     }
   }

@@ -5,8 +5,10 @@ import 'package:medi_dos_app/core/Router/OngenerateRoute.dart';
 import 'package:medi_dos_app/core/Animation/Logo.dart';
 import 'package:medi_dos_app/core/helpers/BlocObserve.dart';
 import 'package:medi_dos_app/core/helpers/DioHelper.dart';
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Logic/auth_bloc.dart';
+import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart'; // Add this import
 
-void main() async{
+void main() async {
   DioHelper.init();
   Bloc.observer = MyBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +20,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<NavBarBloc>(                      
-      create: (context) => NavBarBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<NavBarBloc>(
+          create: (context) => NavBarBloc(),
+        ),
+        BlocProvider<AuthBloc>(
+          create: (context) => AuthBloc(AuthRepo()), 
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme:
-            ThemeData.light(useMaterial3: true), // Ensure correct theme setup
+        theme: ThemeData.light(useMaterial3: true), 
         home: const LogoP(),
-        onGenerateRoute: (settings) => AppRoute()
-            .OnGenerateRoute(settings), // Ensure correct routing setup
+        onGenerateRoute: (settings) => AppRoute().OnGenerateRoute(settings), 
       ),
     );
   }

@@ -7,7 +7,7 @@ class AuthLogin extends AuthEvent {
 
   final String email;
   final String password;
-  AuthLogin(this.email, this.password);
+ AuthLogin({required this.email, required this.password});
   
 }
 class AuthSignup extends AuthEvent {
