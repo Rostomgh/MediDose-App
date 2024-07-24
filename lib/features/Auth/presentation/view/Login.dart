@@ -29,9 +29,10 @@ class _LoginPState extends State<LoginP> {
         title: const Text(
           'Log in',
           style: TextStyle(
-              fontSize: 20,
-              color: AppColors.textcolor,
-              fontWeight: FontWeight.w500),
+            fontSize: 20,
+            color: AppColors.textcolor,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
       body: BlocProvider(
@@ -48,12 +49,10 @@ class _LoginPState extends State<LoginP> {
                 ),
               );
             } else if (state is AuthSuccess) {
-              
-               Navigator.of(context).pop(); 
+              Navigator.of(context).pop(); // Close the loading indicator
               Navigator.pushReplacementNamed(context, '/nav');
             } else if (state is Autherror) {
-              print('errrrrrrrrr');
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(); // Close the loading indicator
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.error)),
               );
@@ -94,8 +93,8 @@ class _LoginPState extends State<LoginP> {
                       if (key.currentState!.validate()) {
                         BlocProvider.of<AuthBloc>(context).add(
                           AuthLogin(
-                            email: email.text,
-                            password: password.text,
+                            email.text,
+                            password.text,
                           ),
                         );
                       }

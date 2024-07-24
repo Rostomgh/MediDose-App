@@ -3,7 +3,7 @@ import 'package:medi_dos_app/features/Screen/App/Home/data/Domain/Service/Servic
 import 'package:medi_dos_app/features/Screen/App/Home/data/Model/ModelAllData.dart';
 
 
-class GetdataServiceImpl implements GetdataService {
+/*class GetdataServiceImpl implements GetdataService {
   final ApiService apiService;
 
   GetdataServiceImpl({required this.apiService});
@@ -23,3 +23,4 @@ class GetdataServiceImpl implements GetdataService {
     await apiService.createClinic(clinic);
   }
 }
+*/
