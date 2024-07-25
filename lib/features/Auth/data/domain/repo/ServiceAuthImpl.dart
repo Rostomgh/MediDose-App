@@ -27,20 +27,23 @@ class AuthRepo implements ServiceAuth {
   }
 
   @override
-  Future<UserModel> Signup(String username, String email, String password) async {
+Future<UserModel> Signup(String username, String email, String password) async {
+  try {
     final response = await apiService.post(
       endPoint: Endpoint.SignUp,
       query: {'username': username, 'email': email, 'password': password},
     );
 
     if (response.statusCode == 200) {
-      try {
-        return UserModel.fromJson(response.data);
-      } catch (e) {
-        throw Exception('Failed to parse user data: $e');
-      }
+      return UserModel.fromJson(response.data);
     } else {
       throw Exception('Signup Failed: ${response.statusCode}');
     }
+  } catch (e) {
+    // You might want to handle different types of exceptions here
+    throw Exception('Signup Failed: $e');
   }
 }
+
+  }
+
