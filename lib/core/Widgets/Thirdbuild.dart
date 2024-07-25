@@ -23,6 +23,11 @@ class CustomThBuild extends StatelessWidget {
           text: "Privacy policy",
           onTap: () {},
         ),
+        CustomCardProfile(
+          ic: const Icon(Icons.exit_to_app_outlined),
+          text: "Logout",
+          onTap: () {},
+        ),
       ],
 
 

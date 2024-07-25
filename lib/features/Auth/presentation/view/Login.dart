@@ -57,17 +57,20 @@ class _LoginPState extends State<LoginP> {
           listener: (context, state) {
             if (state is AuthLoading) {
               _showLoadingDialog(context);
+              print('AuthLoading state detected');
             } else if (state is AuthSuccess) {
               _hideLoadingDialog(context);
-              // Use pushReplacementNamed to ensure the login screen is replaced
+              print('AuthSuccess state detected');
               Future.delayed(Duration(milliseconds: 300), () {
-                Navigator.of(context).pushReplacementNamed('/nav');
+                Navigator.of(context).pushNamedAndRemoveUntil('/nav', (route) => false);
+                print('Navigating to /nav');
               });
             } else if (state is AuthError) {
               _hideLoadingDialog(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.error)),
               );
+              print('AuthError state detected: ${state.error}');
             }
           },
           child: Form(
@@ -109,6 +112,8 @@ class _LoginPState extends State<LoginP> {
                             password.text,
                           ),
                         );
+                        
+                    
                       }
                     },
                     textB: 'Login',
