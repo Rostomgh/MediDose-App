@@ -15,7 +15,7 @@ class ClinicBloc extends Bloc<ClinicEvent, ClinicState> {
       emit(ClinicLoading ());
       try {
         final response = await DioHelper.getData(url: 'clinics'); // Adjust URL as per your API
-        List<Clinic> clinics = (response.data as List).map((clinicJson) => Clinic.fromJson(clinicJson)).toList();
+        List<ClinicModel> clinics = (response.data as List).map((clinicJson) => ClinicModel.fromJson(clinicJson)).toList();
         emit(ClinicLoaded(clinics)) ;
       } catch (e) {
         emit(ClinicError('Failed to fetch clinics: $e')) ;

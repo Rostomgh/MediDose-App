@@ -1,4 +1,4 @@
-class Clinic {
+class ClinicModel {
   final String name;
   final String address;
   final String phone;
@@ -6,7 +6,7 @@ class Clinic {
   final double latitude;
   final double longitude;
 
-  Clinic({
+  ClinicModel({
     required this.name,
     required this.address,
     required this.phone,
@@ -16,8 +16,8 @@ class Clinic {
   });
 
   // Factory constructor to create a Clinic object from JSON
-  factory Clinic.fromJson(Map<String, dynamic> json) {
-    return Clinic(
+  factory ClinicModel.fromJson(Map<String, dynamic> json) {
+    return ClinicModel(
       name: json['name'],
       address: json['address'],
       phone: json['phone'],

@@ -65,15 +65,15 @@ class HomeP extends StatelessWidget {
     );
   }
 
-  Widget _buildClinicList(BuildContext context, List<Clinic> clinics) { 
+  Widget _buildClinicList(BuildContext context, List<ClinicModel> clinics) { 
     return Column(
-      children: clinics.map((clinic) {
+      children: clinics.map((ClinicModel) {
         return CustomGrid(
           //image: clinic.image, 
-          Name: clinic.name,
-          adress: clinic.address,
-          time: clinic.time,
-          number: clinic.phone,
+          Name: ClinicModel.name,
+          adress: ClinicModel.address,
+          time: ClinicModel.time,
+          number: ClinicModel.phone,
           ontap: () {
             Navigator.pushNamed(context, '/map'); // Navigate to '/map' screen
           },

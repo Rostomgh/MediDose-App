@@ -10,7 +10,7 @@ class ClinicInitial extends ClinicState {}
 class ClinicLoading extends ClinicState {}
 
 class ClinicLoaded extends ClinicState {
-  final List<Clinic> clinics;
+  final List<ClinicModel> clinics;
 
   ClinicLoaded(this.clinics);
 

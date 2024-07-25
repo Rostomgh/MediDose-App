@@ -3,13 +3,12 @@ import 'package:flutter/foundation.dart';
 class UserModel {
   final String? username;
   final String? email;
-  final String? password;
+
   final String? token;
 
   UserModel({
     this.username,
     this.email,
-    this.password,
     this.token,
   });
 
@@ -17,7 +16,6 @@ class UserModel {
     return UserModel(
       username: json['username'] as String?,
       email: json['email'] as String?,
-      password: json['password'] as String?,
       token: json['token'] as String?,
     );
   }
@@ -26,7 +24,6 @@ class UserModel {
     return {
       'username': username,
       'email': email,
-      'password': password,
       'token': token,
     };
   }

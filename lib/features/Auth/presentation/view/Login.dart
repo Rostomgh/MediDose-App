@@ -5,7 +5,7 @@ import 'package:medi_dos_app/core/Theme/SizeBoxApp.dart';
 import 'package:medi_dos_app/core/Widgets/CustomButton.dart';
 import 'package:medi_dos_app/core/Widgets/CustomInput.dart';
 import 'package:medi_dos_app/core/Widgets/CustomTextRich.dart';
-import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Login/auth_bloc.dart';
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth Login/auth_bloc.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart';
 
 class LoginP extends StatefulWidget {
@@ -19,6 +19,22 @@ class _LoginPState extends State<LoginP> {
   final key = GlobalKey<FormState>();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
+
+  void _showLoadingDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+  }
+
+  void _hideLoadingDialog(BuildContext context) {
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +56,15 @@ class _LoginPState extends State<LoginP> {
         child: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is AuthLoading) {
-              // Show loading indicator
-              showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
+              _showLoadingDialog(context);
             } else if (state is AuthSuccess) {
-              Navigator.of(context).pop(); // Close the loading indicator
-              Navigator.pushReplacementNamed(context, '/nav');
-            } else if (state is Autherror) {
-              Navigator.of(context).pop(); // Close the loading indicator
+              _hideLoadingDialog(context);
+              // Use pushReplacementNamed to ensure the login screen is replaced
+              Future.delayed(Duration(milliseconds: 300), () {
+                Navigator.of(context).pushReplacementNamed('/nav');
+              });
+            } else if (state is AuthError) {
+              _hideLoadingDialog(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.error)),
               );

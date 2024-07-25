@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:medi_dos_app/core/Services/ApiServices.dart';
 import 'package:medi_dos_app/core/Services/Endpoint.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/service/ServiceAuth.dart';
@@ -12,28 +13,26 @@ class AuthRepo implements ServiceAuth {
       endPoint: Endpoint.Login,
       query: {'email': email, 'password': password},
     );
+
     if (response.statusCode == 200) {
       try {
+        print("Response data: ${response.data}");
         return UserModel.fromJson(response.data);
       } catch (e) {
         throw Exception('Failed to parse user data: $e');
       }
     } else {
-      print("Login Failed");
-      throw Exception('Login Failed');
+      throw Exception('Login Failed: ${response.statusCode}');
     }
   }
 
   @override
-  Future<UserModel> Signup(
-    String username,
-    String email,
-    String password,
-  ) async {
+  Future<UserModel> Signup(String username, String email, String password) async {
     final response = await apiService.post(
       endPoint: Endpoint.SignUp,
       query: {'username': username, 'email': email, 'password': password},
     );
+
     if (response.statusCode == 200) {
       try {
         return UserModel.fromJson(response.data);
@@ -41,7 +40,6 @@ class AuthRepo implements ServiceAuth {
         throw Exception('Failed to parse user data: $e');
       }
     } else {
-      print("Signup Failed: ${response.statusCode}");
       throw Exception('Signup Failed: ${response.statusCode}');
     }
   }
