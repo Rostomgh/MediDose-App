@@ -58,7 +58,6 @@ class _LoginPState extends State<LoginP> {
             print('AuthLoading state detected');
           } else if (state is AuthSuccess) {
             _hideLoadingDialog(context);
-            print('AuthSuccess state detected');
             Future.delayed(const Duration(milliseconds: 300), () {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil('/nav', (route) => false);

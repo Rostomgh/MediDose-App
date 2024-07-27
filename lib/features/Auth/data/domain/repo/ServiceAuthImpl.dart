@@ -27,23 +27,23 @@ class AuthRepo implements ServiceAuth {
   }
 
   @override
-Future<UserModel> Signup(String username, String email, String password) async {
-  try {
-    final response = await apiService.post(
-      endPoint: Endpoint.SignUp,
-      query: {'username': username, 'email': email, 'password': password},
-    );
+  Future<UserModel> Signup(
+      String username, String email, String password) async {
+    try {
+      final response = await apiService.post(
+        endPoint: Endpoint.SignUp,
+        query: {'username': username, 'email': email, 'password': password},
+      );
 
-    if (response.statusCode == 200) {
-      return UserModel.fromJson(response.data);
-    } else {
-      throw Exception('Signup Failed: ${response.statusCode}');
+      if (response.statusCode == 201) {
+        return UserModel.fromJson(response.data);
+      } else {
+        throw Exception('Signup Failed: ${response.data}');
+      }
+    } catch (e) {
+      print(e);
+      // You might want to handle different types of exceptions here
+      throw Exception('Signup Failed: $e');
     }
-  } catch (e) {
-    // You might want to handle different types of exceptions here
-    throw Exception('Signup Failed: $e');
   }
 }
-
-  }
-

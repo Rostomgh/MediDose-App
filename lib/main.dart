@@ -7,7 +7,8 @@ import 'package:medi_dos_app/core/helpers/BlocObserve.dart';
 import 'package:medi_dos_app/core/helpers/DioHelper.dart';
 import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Login/auth_bloc.dart';
 import 'package:medi_dos_app/features/Auth/data/domain/repo/ServiceAuthImpl.dart';
-import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Signup/signup_bloc.dart'; // Add this import
+import 'package:medi_dos_app/features/Auth/presentation/Logic/Auth%20Signup/signup_bloc.dart';
+
 
 void main() async {
   DioHelper.init();
@@ -17,7 +18,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           create: (context) => AuthBloc(AuthRepo()), 
         ),
         BlocProvider<SignupBloc>(create: (context) => SignupBloc(AuthRepo())),
+        
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
